@@ -44,14 +44,22 @@ var pages = {
       fontIndex:1,
       border:'#222222',
       thumbs:[
-         {thumb:"paint/blue",   text:'blue',   view:'img/paint/blue.png'},
-         {thumb:"paint/pink",   text:'pink',   view:'img/paint/pink.png'},
-         {thumb:"paint/hiro_l", text:'hiro l', view:'img/paint/hiro_l.png'},
-         {thumb:"paint/hiro_r", text:'hiro r', view:'img/paint/hiro_r.png'},
-         {thumb:"paint/red",    text:'red',    view:'img/paint/red.png'},
-         {thumb:"paint/long",   text:'long',   view:'img/paint/long.png'},
-         {thumb:"paint/shell",  text:'shell',  view:'img/paint/shell.png'},
-         {thumb:"paint/hafen",  text:'hafen',  view:'img/paint/hafen.png'}
+         {thumb: "paint/blue",          text:'blue',            view:'img/paint/blue.png'},
+         {thumb: "paint/pink",          text:'pink',            view:'img/paint/pink.png'},
+         {thumb: "paint/hiro_l",        text:'hiro l',          view:'img/paint/hiro_l.png'},
+         {thumb: "paint/hiro_r",        text:'hiro r',          view:'img/paint/hiro_r.png'},
+         {thumb: "paint/long",          text:'long',            view:'img/paint/long.png'},
+         {thumb: "paint/shell",         text:'shell',           view:'img/paint/shell.png'},
+         {thumb: "paint/trefoil",       text:'trefoil',         view:'img/paint/trefoil.jpg'},
+         {thumb: "paint/eye",           text:'eye',             view:'img/paint/eye.jpg'},
+         {thumb: "paint/sirpinsky",     text:'sirpinsky',       view:'img/paint/sirpinsky.jpg'},
+         {thumb: "paint/icosahedron",   text:'icosahedron',     view:'img/paint/icosahedron.jpg'},
+         {thumb: "paint/pentagon",      text:'pentagon',        view:'img/paint/pentagon.jpg'},
+         {thumb: "paint/rgb",           text:'rgb',             view:'img/paint/rgb.jpg'},
+         {thumb: "paint/cubes",         text:'cubes',           view:'img/paint/cubes.jpg'},
+         {thumb: "paint/foetus",        text:'foetus',          view:'img/paint/foetus.jpg'},
+         {thumb: "paint/dodecahedron",  text:'dodecahedron',    view:'img/paint/dodecahedron.jpg'},
+         {thumb: "paint/colorblind",    text:'colorblind',      view:'img/paint/colorblind.jpg'}
       ]},
    kraut:{
       thumbs:[
