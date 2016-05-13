@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+java -jar yuicompressor.jar ../js/libs/effects.js       -o ../js/libs/effects_min.js
+java -jar yuicompressor.jar ../js/libs/prototype.js     -o ../js/libs/prototype_min.js
+java -jar yuicompressor.jar ../js/libs/iscroll.js       -o ../js/libs/iscroll_min.js
+java -jar yuicompressor.jar ../js/kinetic.js            -o ../js/libs/kinetic_min.js

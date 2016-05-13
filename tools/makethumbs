@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+for file in img/*; do
+	echo $file
+	f=`basename $file`;
+	`convert $file -resize 200x200 small/${f%.*}.png`;
+	#echo ${f%.*};
+done

@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>kodis projects</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css">
+
+  div#squares {
+    width:  850px;
+    height: 510px;
+    border: 0px solid #000;
+  }
+
+  .square {
+    color: #fff;
+    width: 170px;
+    height: 170px;
+    padding: 0px;
+    background-repeat: no-repeat;
+    position: absolute;
+  }
+
+  div#kodisein { background-image: url(img/kodisein.gif); }
+  div#kraut    { background-image: url(img/kraut.png); }
+  div#krank    { background-image: url(img/krank.png); }  
+  div#kiki     { background-image: url(img/kiki.gif); }
+  div#kork     { background-image: url(img/kork.gif); }
+  div#krix     { background-image: url(img/krix.png); }
+  div#mp3ql    { background-image: url(img/mp3ql.gif); }
+  div#web      { background-image: url(img/web.png); }
+
+  .info_square {
+    width: 170px;
+    height: 130px;
+    padding: 0px;
+    padding-top: 40px;
+    background-color: #ddd;
+    position: absolute;
+  }
+  
+  div#kiki_info { height: 136px; padding-top: 34px; }  
+  div#web_info  { height: 94px;  padding-top: 76px; }  
+  div#small     { font-size: 10px; color: #666; border: 0px dotted #000; }
+  
+  html,body{
+    text-align: center;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    margin: 0px;
+  }
+
+  </style>
+  
+  <noscript>
+    <style>
+      div#squares  {              top:120px; position: relative; }
+      div#kodisein {              top: 340px; }
+      div#krank    { left: 340px; }  
+      div#kiki     { left: 170px; top: 170px; }
+      div#kork     { left: 340px; top: 340px; }
+      div#krix     { left: 510px; top: 170px; }
+      div#mp3ql    { left: 680px; top: 340px; }
+      div#web      { left: 680px; }
+      
+      div#kiki_info     { visibility: hidden;; }  
+      div#kraut_info    { visibility: hidden; }  
+      div#krank_info    { visibility: hidden; }  
+      div#kork_info     { visibility: hidden; }  
+      div#kodisein_info { visibility: hidden; }  
+      div#krix_info     { visibility: hidden; }  
+      div#mp3ql_info    { visibility: hidden; }  
+      div#web_info      { visibility: hidden; }  
+    </style>
+  </noscript>
+
+  <script type="text/javascript" src="scr/mootools-1.2.3-core.js"></script>
+  <script type="text/javascript" src="scr/mootools-1.2.3.1-more.js"></script>
+  <script type="text/javascript" src="scr/monsterkodi.js"></script>
+
+  <script type="text/javascript">
+
+  window.addEvent('resize', function() {
+  	$('squares').position({ 'position': {x: 'center', y: 'center'}});
+  });
+
+  window.addEvent('domready', function() {
+
+  	$('squares').position({ 'position': {x: 'center', y: 'center'}});
+  	$('squares').setStyle('opacity', '0');
+  	$('squares').fade('in');
+
+  	$('kraut')   .position({ x: '0',  y: '0'    });
+  	$('kiki')    .position({ x: '170', y: '170' });
+  	$('krank')   .position({ x: '340', y: '0'   });
+  	$('krix')    .position({ x: '510', y: '170' });
+  	$('kodisein').position({ x: '0',   y: '340' });
+  	$('kork')    .position({ x: '340', y: '340' });
+  	$('mp3ql')   .position({ x: '680', y: '340' });
+  	$('web')     .position({ x: '680', y: '0'   });
+	
+  	$('kraut_info')   .position({ x: '170', y: '0'   }); $('kraut_info')   .setStyle('opacity', '0');
+		$('kiki_info')    .position({ x: '340', y: '170' }); $('kiki_info')    .setStyle('opacity', '0');
+  	$('krank_info')   .position({ x: '340', y: '170' }); $('krank_info')   .setStyle('opacity', '0');
+  	$('kork_info')    .position({ x: '340', y: '170' }); $('kork_info')    .setStyle('opacity', '0');
+		$('kodisein_info').position({ x: '170', y: '340' }); $('kodisein_info').setStyle('opacity', '0');
+  	$('krix_info')    .position({ x: '340', y: '170' }); $('krix_info')    .setStyle('opacity', '0');
+  	$('mp3ql_info')   .position({ x: '510', y: '340' }); $('mp3ql_info')   .setStyle('opacity', '0');
+  	$('web_info')     .position({ x: '510', y: '0'   }); $('web_info')     .setStyle('opacity', '0');
+  
+		$('kiki').addEvents({
+  		mouseenter: function(){ this.morph({ 'opacity': '0.8' }); $('kiki_info').fade('in'); },
+  		mouseleave: function(){ this.morph({ 'opacity': '1.0' }); $('kiki_info').fade('out'); },
+  		click:      function(){ this.delay_link(); return false; },  		
+  	});
+
+		$('kraut').addEvents({
+  		mouseenter: function(){ this.morph({ 'opacity': '0.8' }); $('kraut_info').fade('in'); },
+  		mouseleave: function(){ this.morph({ 'opacity': '1.0' }); $('kraut_info').fade('out'); },
+  		click:      function(){ this.delay_link(); return false; },  		
+  	});
+
+		$('krank').addEvents({
+  		mouseenter: function(){ this.morph({ 'opacity': '0.8' }); $('krank_info').fade('in'); },
+  		mouseleave: function(){ this.morph({ 'opacity': '1.0' }); $('krank_info').fade('out'); },
+  		click:      function(){ this.delay_link(); return false; },  		
+  	});
+
+		$('kodisein').addEvents({
+		  mouseenter: function(){ this.morph({ 'opacity': '0.8' }); $('kodisein_info').fade('in'); },
+  		mouseleave: function(){ this.morph({ 'opacity': '1.0' }); $('kodisein_info').fade('out'); },
+  		click:      function(){ this.delay_link(); return false; },  		
+  	});
+
+		$('kork').addEvents({
+  		mouseenter: function(){ this.morph({ 'opacity': '0.8' }); $('kork_info').fade('in'); },
+  		mouseleave: function(){ this.morph({ 'opacity': '1.0' }); $('kork_info').fade('out'); },
+  		click:      function(){ this.delay_link(); return false; },  		
+  	});
+
+		$('krix').addEvents({
+  		mouseenter: function(){ this.morph({ 'opacity': '0.8' }); $('krix_info').fade('in'); },
+  		mouseleave: function(){ this.morph({ 'opacity': '1.0' }); $('krix_info').fade('out'); },
+  		click:      function(){ this.delay_link(); return false; },  		
+  	});
+
+		$('mp3ql').addEvents({
+  		mouseenter: function(){ this.morph({ 'opacity': '0.8' }); $('mp3ql_info').fade('in'); },
+  		mouseleave: function(){ this.morph({ 'opacity': '1.0' }); $('mp3ql_info').fade('out'); },
+  		click:      function(){ this.delay_link(); return false; },  		
+  	});
+
+		$('web').addEvents({
+  		mouseenter: function(){ this.morph({ 'opacity': '0.8' }); $('web_info').fade('in'); },
+  		mouseleave: function(){ this.morph({ 'opacity': '1.0' }); $('web_info').fade('out'); },
+  		click:      function(){ this.delay_link(); return false; },  		
+  	});
+
+  });
+
+</script>
+
+</head>
+<body bgcolor="#aaaaaa">
+<center>
+<div id="squares">
+  <a href="http://monsterkodi.net/kraut">   <div id="kraut"    class="square"></div></a>
+  <a href="http://krank.sourceforge.net">   <div id="krank"    class="square"></div></a>
+  <a href="http://kiki.sourceforge.net">    <div id="kiki"     class="square"></div></a>
+  <a href="http://kodisein.sourceforge.net"><div id="kodisein" class="square"></div></a>
+  <a href="http://krix.sourceforge.net">    <div id="krix"     class="square"></div></a>
+  <a href="http://kork.sourceforge.net">    <div id="kork"     class="square"></div></a>
+  <a href="http://mp3ql.sourceforge.net">   <div id="mp3ql"    class="square"></div></a>
+  <a href="webprojects.html">               <div id="web"      class="square"></div></a>
+  
+  <div class="info_square" id="kiki_info"><b>kiki the nano bot</b><br><br>3d puzzle game<br>udevgame winner<br><br><div id="small">c++, python, opengl</div><div id ="small">2003-2007</div></div>
+  <div class="info_square" id="kraut_info"><b>kraut</b><br><br>iphone game<br><br><div id="small">objective c, opengl</div><div id ="small">2008</div></div>
+  <div class="info_square" id="krank_info"><b>krank</b><br><br>casual game<br><br><div id="small">pygame</div><div id ="small">2007</div></div>
+  <div class="info_square" id="kodisein_info"><b>kodisein</b><br><br>vj-tool<br><br><div id="small">c++, opengl</div><div id ="small">2002</div></div>
+  <div class="info_square" id="kork_info"><b>kork</b><br><br>action game<br><br><div id="small">pyogre, pyode</div><div id ="small">2004</div></div>
+  <div class="info_square" id="krix_info"><b>krix</b><br><br>mp3 organizer<br><br><div id="small">pyobjc</div><div id ="small">2006</div></div>
+  <div class="info_square" id="mp3ql_info"><b>mp3ql</b><br><br>mp3 organizer<br><br><div id="small">python</div><div id ="small">2004</div></div>
+  <div class="info_square" id="web_info"><b>web projects</b></div>  
+</div>
+</center>
+</body>
+</html>

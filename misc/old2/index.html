@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>monsterkodi.net</title>
+    <style>
+
+      div#squares {
+        width:  340px;
+        height: 340px;
+        margin-top: 200px;
+      }
+
+      .square {
+        width: 170px;
+        height: 170px;
+        padding: 0px;
+        text-align: center;        
+        border:1px solid #fff;
+        position: absolute;
+      }
+
+      div#projects {
+        background-image: url(img/kodisein.gif);
+      }
+
+      div#cv {
+        background-image: url(img/kork.gif);
+        margin-left: 171px;
+        margin-top: 171px;
+      }
+
+      .info {
+        width: 171px;        
+        position: absolute;
+      }
+
+      div#projects_info {
+        height: 20px;
+        border-top:1px solid #000;
+        margin-left: 171px;
+        text-align: right;
+      }
+
+      div#cv_info {
+        height: 18px;
+        border-bottom:1px solid #000;
+        text-align: left;
+      }
+      
+      html,body{
+        text-align: center;
+        font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        margin: 0px;
+      }
+
+    </style>
+
+    <noscript><style>
+      
+      .square { border:1px solid #000; }
+
+      div#projects_info {
+        border-top:1px solid #000;
+      }      
+    
+      div#cv_info {
+        border-bottom:1px solid #000;
+        margin-top: 324px;
+      }
+        
+    </style></noscript>
+      
+    <script type="text/javascript" src="scr/mootools-1.2.3-core.js"></script>
+    <script type="text/javascript" src="scr/mootools-1.2.3.1-more.js"></script>
+    <script type="text/javascript" src="scr/monsterkodi.js"></script>
+    
+    <script type="text/javascript">
+    
+    window.addEvent('resize', function() {
+      $('squares').setStyle('margin-top', '0');
+    	$('squares').position({ 'position': {x: 'center', y: 'center'}});
+    });
+
+    window.addEvent('domready', function() {
+
+    	$('squares').position({ 'position': {x: 'center', y: 'center'}});
+      $('squares').setStyle('margin-top', '0');
+      $('squares').setStyle('opacity', '0');
+    	$('squares').fade('in');
+
+    	$('cv')           .position({ x: '171', y: '171' });
+    	$('cv_info')      .position({ x: '1', y: '324' });
+    	$('projects')     .position({ x: '0', y: '0' });
+    	$('projects_info').position({ x: '171', y: '0' });
+
+    	$('projects_info').setStyle('opacity', '0');
+    	$('cv_info')      .setStyle('opacity', '0');
+    	
+    	$('projects').addEvents({
+    		mouseenter: function(){ this.morph({ 'border-color': '#000' }); $('projects_info').fade('in');  },
+    		mouseleave: function(){ this.morph({ 'border-color': '#fff' }); $('projects_info').fade('out'); },
+    		click:      function(){ this.delay_link(); return false; },  		
+    	});
+
+    	$('cv').addEvents({
+    		mouseenter: function(){ this.morph({ 'border-color': '#000' }); $('cv_info').fade('in');  },
+    		mouseleave: function(){ this.morph({ 'border-color': '#fff' }); $('cv_info').fade('out'); },
+    		click:      function(){ this.delay_link(); return false; },  		
+    	});
+
+    }); // end domready
+        
+    </script>      
+</head>
+
+<body bgcolor="#aaaaaa">
+  <center>
+  <div id="squares">
+    <a href="projects.html"><div id="projects" class="square"></div></a>
+    <a href="cv.html">      <div id="cv"       class="square"></div></a>
+    <div id="projects_info" class="info">projects</div>
+    <div id="cv_info"       class="info">curriculum vitae</div>
+  </div>
+  </center>
+
+</body>
+</html>

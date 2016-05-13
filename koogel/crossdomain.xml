@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE cross-domain-policy
+SYSTEM "http://www.macromedia.com/xml/dtds/cross-domain-policy.dtd">
+<cross-domain-policy>
+<allow-access-from domain="*.fizzlebot.com" />
+<allow-access-from domain="*.jayisgames.com" />
+<allow-access-from domain="*.casualgameplay.com" />
+<allow-access-from domain="*.monsterkodi.net" />
+<allow-access-from domain="mirror1.cgdc4.fizzlebot.com" />
+<allow-access-from domain="mirror2.cgdc4.fizzlebot.com" />
+<allow-access-from domain="mirror3.cgdc4.fizzlebot.com" />
+<allow-access-from domain="mirror4.cgdc4.fizzlebot.com" />
+<allow-access-from domain="mirror5.cgdc4.fizzlebot.com" />
+<allow-access-from domain="mirror6.cgdc4.fizzlebot.com" />
+<allow-access-from domain="mirror7.cgdc4.fizzlebot.com" />
+<allow-access-from domain="mirror8.cgdc4.fizzlebot.com" />
+<allow-access-from domain="mirror9.cgdc4.fizzlebot.com" />
+<allow-access-from domain="casualgameplay.com" />
+<allow-access-from domain="jayisgames.com" />
+<allow-access-from domain="monsterkodi.net" />
+</cross-domain-policy>
+

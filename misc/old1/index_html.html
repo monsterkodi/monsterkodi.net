@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+<TITLE>kodis projects</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+
+<script type="text/javascript">
+<!--
+empty_frame = new Image();
+empty_frame.src = "images/kodis_home_title_frame.png";   
+
+kodisein = new Image();
+kodisein.src = "images/kodis_projects_kodisein.gif";  
+kodisein_highlight = new Image();
+kodisein_highlight.src = "images/kodis_projects_kodisein_highlight.gif";
+kodisein_info = new Image();
+kodisein_info.src  = "images/kodis_projects_title_frame.png";
+
+kork = new Image();
+kork.src = "images/kodis_projects_kork.gif";     
+kork_highlight = new Image();
+kork_highlight.src = "images/kodis_projects_kork_highlight.gif";
+kork_info = new Image();
+kork_info.src  = "images/kodis_home_cv_info.png";
+
+function swap(index,image,info) 
+{
+	window.document.images[index].src = image.src;
+	window.document.images[1].src = info.src;
+}
+//-->
+</script>
+
+<style type="text/css">
+<!--
+h1 { color:#6363A5; font-family:Arial,sans-serif; }
+p  { color:#000000; font-family:Arial,sans-serif; }
+-->
+</style>
+
+</HEAD>
+<BODY BGCOLOR=#FFFFFF>
+<BR><BR>
+<CENTER>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+	<TR>
+		<TD>
+			<a href="kodis_projects.html" onMouseOver="swap(0,kodisein_highlight,kodisein_info)" onMouseOut="swap(0,kodisein,empty_frame)" target="_blank">
+				<IMG SRC="images/kodis_projects_kodisein.gif" WIDTH=156 HEIGHT=156 BORDER=0>
+			</a>
+		</TD>
+		<TD>&nbsp;
+			</TD>
+		<TD>&nbsp;
+		    </TD>
+		<TD>&nbsp;
+			</TD>
+	</TR>
+	<TR>
+		<TD>&nbsp;
+			</TD>
+		<TD>
+			<IMG SRC="images/kodis_home_title_frame.png" WIDTH=156 HEIGHT=156>
+			</TD>
+	</TR>
+    <TR>
+		<TD>&nbsp;
+			</TD>
+		<TD>&nbsp;</TD>
+		<TD><TD><a href="kodis_cv.html" onMouseOver="swap(2,kork_highlight,kork_info)" onMouseOut="swap(2,kork,empty_frame)" target="_blank">
+				<IMG SRC="images/kodis_projects_kork.gif" WIDTH=156 HEIGHT=156 BORDER=0></a>
+		</TD>
+			</TD>
+		<TD>
+			&nbsp;</TD>
+	</TR>	
+</TABLE>
+</CENTER>
+</BODY>
+</HTML>

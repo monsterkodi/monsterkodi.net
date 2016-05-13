@@ -1,0 +1,24 @@
+body {
+    font-size : 8px;
+    font-family : verdana, helvetica, sans-serif; 
+    margin : 0px; 
+    background-color : #ffffff;
+    color : #505050;
+}
+
+
+a {
+    color: #bbbbbb;
+    text-decoration : none;
+    font-size : 12px;
+}
+
+a:visited {
+    color: #808080;
+}
+
+a:hover {
+    color: #000000;
+    text-decoration : none;
+}
+

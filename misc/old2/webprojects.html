@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
+<head>
+<title>kodis webprojects</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css">
+
+  div#squares {
+    width:  850px;
+    height: 510px;
+  }
+  
+  .square {
+    width: 170px;
+    height: 170px;
+    position: absolute;    
+  }
+
+  div#immerwinter { background-image: url(img/immerwinter.png); }
+  div#kodisampler { background-image: url(img/web.png);         }
+  div#parakapa    { background-image: url(img/parakapa.png);    }  
+
+  .info {
+    width: 170px;
+    height: 120px;
+    padding-top: 50px;
+    position: absolute;
+    background-color: #fff;    
+  }
+
+  div#kodisampler_info {
+    height: 125px;
+    padding-top: 45px;
+  }  
+  
+  .preview {
+    width: 510px;
+    height: 495px;
+    position: absolute;
+    padding-top: 15px;
+    background-color: #fff;    
+  }
+  
+  .preview img {
+    border: 0px;
+  }
+  
+  div#small {
+    font-size: 10px;
+    color: #666;
+    border: 0px dotted #000;
+  }
+  
+  html,body{
+    text-align: center;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    margin: 0px;
+  }
+
+  </style>
+  
+  <noscript>
+    <style>
+    
+    div#squares {
+      margin: 40px;
+      height: 1570px;      
+      position: relative;
+    }
+
+    .preview { left: 340px; }
+    .info    { left: 170px; }
+    
+    div#parakapa            { top: 530px; }
+    div#parakapa_info       { top: 530px; }
+    div#parakapa_preview    { top: 530px; }
+    
+    div#kodisampler         { top: 1060px; }
+    div#kodisampler_info    { top: 1060px; }  
+    div#kodisampler_preview { top: 1060px; }
+    
+    </style>
+  </noscript>
+
+  <script type="text/javascript" src="scr/mootools-1.2.3-core.js"></script>
+  <script type="text/javascript" src="scr/mootools-1.2.3.1-more.js"></script>
+  <script type="text/javascript" src="scr/monsterkodi.js"></script>
+
+  <script type="text/javascript">
+
+  window.addEvent('resize', function() {
+
+  	$('squares').position({ 'position': {x: 'center', y: 'center'}});
+
+  });
+
+  window.addEvent('domready', function() {
+
+  	var s = $('squares');	
+  	s.position({ 'position': {x: 'center', y: 'center'}});
+  	s.setStyle('opacity', '0');
+  	s.fade('in');
+
+  	$('immerwinter') .position({ x: '0', y: '0'   });
+  	$('parakapa')    .position({ x: '0', y: '170' });
+  	$('kodisampler') .position({ x: '0', y: '340' });
+  	  	
+  	$('immerwinter_preview') .position({ x: '340',   y: '0' }); $('immerwinter_preview') .setStyle('opacity', '0');
+  	$('parakapa_preview')    .position({ x: '340',   y: '0' }); $('parakapa_preview')    .setStyle('opacity', '0');
+  	$('kodisampler_preview') .position({ x: '340',   y: '0' }); $('kodisampler_preview') .setStyle('opacity', '0');
+	
+  	$('immerwinter_info') .position({ x: '170', y: '0'   }); $('immerwinter_info') .setStyle('opacity', '0');
+  	$('parakapa_info')    .position({ x: '170', y: '170' }); $('parakapa_info')    .setStyle('opacity', '0');
+  	$('kodisampler_info') .position({ x: '170', y: '340' }); $('kodisampler_info') .setStyle('opacity', '0');
+    
+		$('immerwinter').addEvents({
+  		mouseenter: function(){ $('parakapa').fade('out'); $('kodisampler').fade('out'); $('immerwinter_info').fade('in');  $('immerwinter_preview').fade('in'); },
+  		mouseleave: function(){ $('parakapa').fade('in');  $('kodisampler').fade('in');  $('immerwinter_info').fade('out'); $('immerwinter_preview').fade('out'); },
+  		click:      function(){ this.delay_link(); return false; },  		
+  	});
+
+		$('kodisampler').addEvents({
+  		mouseenter: function(){ $('parakapa').fade('out'); $('immerwinter').fade('out'); $('kodisampler_info').fade('in');  $('kodisampler_preview').fade('in'); },
+  		mouseleave: function(){ $('parakapa').fade('in');  $('immerwinter').fade('in');  $('kodisampler_info').fade('out'); $('kodisampler_preview').fade('out'); },
+  		click:      function(){ this.delay_link(); return false; },  		
+  	});
+
+		$('parakapa').addEvents({
+  		mouseenter: function(){ $('kodisampler').fade('out'); $('immerwinter').fade('out');  $('parakapa_info').fade('in');  $('parakapa_preview').fade('in'); },
+  		mouseleave: function(){ $('kodisampler').fade('in');  $('immerwinter').fade('in');   $('parakapa_info').fade('out'); $('parakapa_preview').fade('out'); },
+  		click:      function(){ this.delay_link(); return false; },  		
+  	});
+  	  
+  });
+
+</script>
+
+</head><body bgcolor="#aaaaaa">
+<center><div id="squares">
+  
+  <a href="http://immerwinter.org">                         
+    <div id="immerwinter"         class="square"></div>
+    <div id="immerwinter_preview" class="preview"><img src="img/immerwinter_preview.png"></div>
+  </a>
+  <a href="http://monsterkodi.net/parasitaere-kapazitaeten">
+    <div id="parakapa"            class="square"></div>
+    <div id="parakapa_preview"    class="preview"><img src="img/parakapa_preview.png"></div>
+  </a>
+  <a href="http://monsterkodi.net/kodisampler">
+    <div id="kodisampler"         class="square"></div>
+    <div id="kodisampler_preview" class="preview"><img src="img/kodisampler.png"></div>
+  </a>
+  
+  <div id="immerwinter_info" class="info"><b>immerwinter                        </b><br><br>community<br>weblog/shoutbox</div>
+  <div id="kodisampler_info" class="info"><b>kodisampler                        </b><br><br>links to<br>freely available<br>music</div>  
+  <div id="parakapa_info"    class="info"><b>parasit&auml;re<br>kapazit&auml;ten</b><br><br>miscellaneous works</div>
+  
+</div></center>
+</body></html>

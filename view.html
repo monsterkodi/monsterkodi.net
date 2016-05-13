@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content='text/html charset=utf-8' http-equiv='Content-Type'>
+    <meta content='initial-scale=1.0, user-scalable=no' name='viewport'>
+    <title>monsterkodi.net - view</title>
+    <style type="text/css">
+        body        { margin: 0; padding: 0; overflow: hidden; background: #000; background-color: #000; }
+        #wrapper    { position: absolute; z-index: 1; top: 0; bottom: 0; left: 0; width: 100%; height: 100%; overflow: hidden; }
+        #canvas     { position: absolute; z-index: 1; padding: 0; }
+        .scrollbarV { position: absolute; z-index: 100; width:  10px; bottom: 14px; top: 2px; right: 1px }
+        .scrollbarH { position: absolute; z-index: 100; height: 10px; bottom: 1px; left: 2px; right: 14px }
+        .scrollbarV > div { position: absolute; z-index: 100; width:  100%; -webkit-border-radius: 5px; -moz-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; }
+        .scrollbarH > div { position: absolute; z-index: 100; height: 100%; -webkit-border-radius: 5px; -moz-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; }
+    </style>
+    <script type='text/javascript' src='js/libs/iscroll_min.js'                   ></script>
+    <script type='text/javascript' src='js/libs/kinetic_min.js'                   ></script>
+    //<script type='text/javascript' src='js/libs/kinetic-v4.6.0.js'                   ></script>
+    <script type='text/javascript' src='js/kinetic_sugar.js'                      ></script>
+    <script type='text/javascript' src='js/libs/prototype_min.js'                 ></script>
+    <script type='text/javascript' src='js/libs/scriptaculous.js?load=effects_min'></script>
+    <script type='text/javascript' src='js/view.js'                               ></script>
+</head>
+<body bgcolor='#000' id='body'>
+<div id="wrapper">
+    <div id='canvas'></div>
+</div>
+</body>
+</html>

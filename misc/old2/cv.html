@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>kodis curriculum vitae</title>
+    <style>
+
+      div#cv {
+        color: #000;
+        width: 670px;
+        padding: 20px;
+        text-align: left;
+        margin-top:20px;
+        margin-bottom:20px;
+        background-color: #fff;
+        border:1px solid #000;
+      }
+
+      div#back {
+        color: #fff;
+        width: 170px;
+        height: 170px;
+        padding: 0px;
+        background-image: url(img/kork.gif);
+        background-repeat: no-repeat;
+        border:1px solid #ddd;
+        margin: 15px;
+      	float: right;
+      }
+
+      html,body {
+        font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        margin: 20px;
+      }
+
+    </style>
+
+    <script type="text/javascript" src="scr/mootools-1.2.3-core.js"></script>
+    <script type="text/javascript" src="scr/mootools-1.2.3.1-more.js"></script>
+    <script type="text/javascript" src="scr/monsterkodi.js"></script>
+
+    <script type="text/javascript">
+
+      window.addEvent('domready', function() {
+
+      	$('cv').setStyle('opacity', '0');
+      	$('cv').fade('in');
+
+      	$('back').addEvents({
+      		mouseenter: function(){ this.morph({ 'border-color': '#000' }); },
+      		mouseleave: function(){ this.morph({ 'border-color': '#ddd' }); },
+      		click:      function(){ this.delay_link(); return false; },
+      	});
+
+      });
+
+    </script>
+
+</head><body bgcolor="#aaaaaa"><center><div id="cv">
+
+      <a href="index.html"><div id="back"></div></a>
+
+      <h2>Thorsten Kohnhorst</h2>
+      <br>
+      <b>Personal Details</b>
+      <blockquote> Address: Copenhagen, Denmark
+        <p>Phone (mobile): +45 52827385<br>
+          E-mail: <a href="mailto:monsterkodi@users.sourceforge.net">monsterkodi@users.sourceforge.net</a><br>
+          Date of Birth: 19.07.1972<br>
+          Nationality: German</p>
+      </blockquote>
+      <p><br>
+        <b>Education</b><br>
+      </p>
+      <blockquote>
+        <p> 1991 - 2001 <b>University of Dortmund</b></p>
+        <blockquote>
+          <p>course of studies: <b>Computer Science</b><br>
+            special subject: <b>Computer Graphics</b><br>
+            secondary subject: <b>Fine Arts</b><br>
+          </p>
+          <p> 1997 - 1998 <b>diploma thesis</b>:</p>
+          <blockquote>
+            <p>"Kosima - A System for the Design and Animation of Regular Tilings"</p>
+          </blockquote>
+          <p>1995 - 1996 <b>project work</b>:</p>
+          <blockquote>
+            <p>"Philia - Realization and Application of a GP/AL-System"<br>
+            </p>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      <p><br>
+        <b>Professional Experience<br>
+        </b></p>
+      <blockquote>
+        <p>2009 - 20** <b>IO Interactive</b>, Copenhagen</p>
+        <blockquote>
+          <p><i>UI Programmer;</i> Development of the menu and HUD for "Hitman Absolution".<br>
+          </p>
+        </blockquote>
+        <p>2005 - 2009 <b>49Games</b>, Hamburg</p>
+        <blockquote>
+          <p><i>Gameplay Programmer;</i> Development of multiplatform sport games.<br>
+          </p>
+        </blockquote>
+        <p>2003 - 2005 <b>Codeon GmbH</b>, Dortmund</p>
+        <blockquote>
+          <p><i>IT Developer;</i> Development of object oriented server applications
+            and GUIs.<br>
+          </p>
+        </blockquote>
+        2002 <b>Freelancing Programmer</b>, Barcelona<br>
+        <blockquote>Cooperation with Innothna Artcomm<br>
+        </blockquote>
+        2001 <b>Pixelpark UK Ltd.</b>, London <br>
+        2000 <b>Pixelpark AG</b>, Dortmund<br>
+        <blockquote><i>Technical Lead;</i> Leading a team of 10 developers
+          in charge of the creation of the CMS and the backend for a major customer's
+          website.<br>
+        </blockquote>
+        1997 - 1999 <b>Object Factory GmbH</b>, Object oriented software house,
+        Dortmund<br>
+        <blockquote><i>IT Developer;</i> Development of object oriented server
+          applications. <br>
+          Responsible for the GUI development of an internal service-level management
+          application. <br>
+        </blockquote>
+        1995 - 1998 <b>Professorial Chair for Computer Graphics</b>, University
+        of Dortmund<br>
+        <blockquote><i>Professors' assistant;</i> GUI development for various
+          research projects. Software and webserver administration.<br>
+        </blockquote>
+        1993 - 1994 <b>Institute of Fine Arts and their Didactics</b>, University
+        of Dortmund<br>
+        <blockquote><i>Professors' assistant;</i> Computer-tutorial for art
+          students.<br>
+          Development of a system for interactive image analysis.<br>
+        </blockquote>
+        1991 - 1995 <b>MB Data Research</b>, IT solution provider, Dortmund<br>
+        <blockquote>
+          <p><i>IT Developer;</i> Development of graphical user interfaces for
+            various in-house applications and other projects.</p>
+        </blockquote>
+      </blockquote>
+      <p><br>
+        <b>Internships</b></p>
+      <blockquote>
+        <p> Summer 1991 <b>Ruhrkohle AG</b>, Bottrop</p>
+        <blockquote>
+          <p> 3-month Internship in a software department responsible for developing
+            a program for the graphical representation of coal mining plants
+            (DIGMAP)
+          </p>
+        </blockquote>
+      </blockquote>
+      <p><br><strong>Private Projects</strong></p>
+      <blockquote>
+        <p>2011 <a href="http://monsterkodi.net/k"><strong>k</strong></a><strong>,
+          graphical programming environment for the iPad</strong>, unreleased, Objective C</p>
+        <p>2011 <a href="http://monsterkodi.net/klogger"><strong>klogger</strong></a><strong>,
+          development tool</strong>, OSC logger, Objective C</p>
+        <p>2010 <a href="http://monsterkodi.net/krap"><strong>krap</strong></a><strong>,
+          educational iPad game</strong>, unreleased, Objective C</p>
+        <p>2008 <a href="http://monsterkodi.net/kraut"><strong>kraut</strong></a><strong>,
+          casual game for the iPhone</strong>, Objective C, OpenGL, iPad port in 2010</p>
+        <p>2007 <a href="http://krank.sourceforge.net"><strong>krank</strong></a><strong>,
+          casual game</strong>, pygame, iPad port in 2010</p>
+        <p>2006 <a href="http://krix.sourceforge.net"><strong>krix</strong></a><strong>,
+          music organizer</strong>, pyObjC</p>
+	      <p>2005 <strong>diplography</strong><strong>,
+          diplomacy game</strong>, Flash, Action Script</p>
+        <p>2004 <a href="http://kork.sourceforge.net"><strong>kork</strong></a><strong>,
+          3D action game prototype</strong>, python, pyOgre, pyODE</p>
+        <p>2004 <a href="http://mp3ql.sourceforge.net"><strong>mp3ql</strong></a><strong>,
+          mp3 organizer</strong>, python, pyQt</p>
+        <p>2003 <strong> <a href="http://kiki.sourceforge.net">kiki the nano
+          bot</a>, 3D puzzle game</strong>, uDevGame winner, C++, Python, OpenGL</p>
+        <p>2002 <a href="http://kodisein.sourceforge.net"><strong>kodisein</strong></a><strong>,
+          VJ-tool</strong>, realtime 3D animation, C++, OpenGL</p>
+      </blockquote>
+      <p>
+  </div>
+
+</center></body></html>

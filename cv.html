@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content='text/html charset=utf-8' http-equiv='Content-Type'>
+    <title>Thorsten Kohnhorst</title>
+    <style>
+        @font-face {
+            font-family: 'PTSans'; font-weight: bold; font-style: normal;
+            src: url('fonts/pt_sans-narrow-web-bold-webfont.eot');
+            src: url('fonts/pt_sans-narrow-web-bold-webfont.eot?#iefix') format('embedded-opentype'),
+                 url('fonts/pt_sans-narrow-web-bold-webfont.woff') format('woff'),
+                 url('fonts/pt_sans-narrow-web-bold-webfont.ttf') format('truetype'),
+                 url('fonts/pt_sans-narrow-web-bold-webfont.svg#pt_sans_narrowbold') format('svg');
+        }
+
+        ::-moz-selection    { background-color:#333; }
+        ::-webkit-selection { background-color:#333; }
+        ::selection         { background-color:#888; }
+        html, body  { font-family: 'PTSans', sans-serif; margin: 30px 10px 80px 10px; line-height: 150%; }
+        div#cv      { color: #bbb; width: 760px; text-align: left; background-color: #000; }
+        #pdf        { float: right; height:0; padding-right:65px; }
+        .line       { clear: both; }
+        .dline      { clear: both; }
+        h1          { font-size: 38px; color: #dddd00; }
+        h2          { font-size: 28px; color: #23b0ff; clear: both; }
+        .label      { font-size: 16px; color: #666666; width: 120px; display: inline-block; }
+        .text       { font-size: 24px; color: #aaa; }
+        .date       { font-size: 24px; color: #004488; float: left; width: 120px; }
+        .uni        { font-size: 25px; color: #ff8800; float: left; }
+        .uni2       { font-size: 22px; color: #ff8800; float: left; width: 130px; }
+        .empl       { font-size: 24px; color: #ff8800; float: left; line-height: 100%; width: 210px; }
+        .town       { font-size: 18px; color: #dd0000; padding-bottom:13px; }
+        .jobtitle   { font-size: 22px; color: #11bb33; float: left; line-height: 120%; }
+        .jobdesc    { font-size: 18px; color: #aaa;    line-height: 100%; padding-bottom:20px; }
+        .job        { font-size: 18px; color: #aaa; }
+        .link       { font-size: 24px; color: #ff8800; float: left; width: 170px; padding-bottom: 10px; }
+        .link:hover { font-size: 29px; color: #ff0;    width: 170px; }
+        .desc       { font-size: 20px; color: #aaa;    float: left; line-height: 100%; width: 270px; }
+        .os         { font-size: 16px; color: #666666; float: left; line-height: 100%; padding-bottom: 10px; width: 85px; }
+        .lang       { font-size: 16px; color: #11bb33; float: left; line-height: 100%; padding-bottom: 10px; padding-left:10px; }
+        a           {                  color: #aaa;    text-decoration: none; }
+        a:hover     {                  color: #ff0;    text-decoration: none; }
+    </style>
+</head>
+
+<script type='text/javascript' src='js/libs/prototype_min.js'></script>
+<script type='text/javascript' src='js/libs/scriptaculous.js?load=effects_min'></script>
+<script type='text/javascript'>
+    function initCV()
+    {
+        $(cv).onclick          = function(e) { e.stopPropagation(); };
+        $(cv).onmousemove      = function(e) { $(cv).style.cursor = "default"; };
+        $(wrapper).onmousemove = function(e) { $(wrapper).style.cursor = "url(js/cursor.cur), nw-resize"; };
+        $(wrapper).onclick     = function(e) {
+            Effect.Fade('wrapper', { duration: 0.5, afterFinish:function() {window.location = window.location.host ? './' : 'index.html';} });
+        };
+        Effect.Appear('wrapper', { duration: 1.0 });
+    }
+    window.onload = function() { initCV(); };
+</script>
+
+<body bgcolor="#000">
+<center>
+    <div id="wrapper" style="display:none" >
+    <div id="cv">
+        <h1>Thorsten Kohnhorst</h1>
+        <h2>Personal Details</h2><div id='pdf'><a href='CV_ThorstenKohnhorst.pdf'><img src='thumbs/misc/cv.png'></a></div>
+        <div class='line'><span class='label'>address:      </span><span class='text'>Hamburg, Germany</span></div>
+        <div class='line'><span class='label'>e-mail:       </span><span class='text'><a href="mailto:monsterkodi@gmx.net">monsterkodi@gmx.net</a></span></div>
+        <div class='line'><span class='label'>phone:        </span><span class='text'> +49 152 52809783</span></div>
+        <div class='line'><span class='label'>date of birth:</span><span class='text'>19.07.1972</span></div>
+        <div class='line'><span class='label'>nationality:  </span><span class='text'>German</span></div>
+        <h2>Education</h2>
+        <div class='line' style='padding-bottom:28px;'><div class='date'>1991 - 2001        </div><div class='uni'>University of Dortmund</div></div>
+        <div class='line'><span class='label'>course of studies:</span><span class='text'>Computer Science</span></div>
+        <div class='line'><span class='label'>special subject:  </span><span class='text'>Computer Graphics</span></div>
+        <div class='line' style='padding-bottom:6px;'><span class='label'>secondary subject:</span><span class='text'>Fine Arts</span></div>
+        <div class='line'><div class='date'>1997 - 1998        </div><div class='uni2'>diploma thesis:</div><span class='job'>"Kosima - A System for the Design and Animation of Regular Tilings"</span></div>
+        <div class='line'><div class='date'>1995 - 1996        </div><div class='uni2'>project work:  </div><span class='job'>"Philia - Realization and Application of a GP/AL-System"</span></div>
+        <h2 style='margin-top:28px;'>Professional Experience</h2>
+        <div class='dline'><div class='date'>2012 - 2014</div><div class='empl'>Deep Silver FISHLABS                       <div class='town'>Hamburg               </div></div><div class='jobtitle'>Senior Programmer     <div class='jobdesc'>Developing a GUI for editing game data<br>and various gameplay development tasks.</div></div> </div>
+        <div class='dline'><div class='date'>2009 - 2012</div><div class='empl'>IO Interactive                             <div class='town'>Copenhagen            </div></div><div class='jobtitle'>UI Programmer         <div class='jobdesc'>Developing the menu and HUD for the<br>console game "Hitman Absolution".</div></div> </div>
+        <div class='dline'><div class='date'>2005 - 2009</div><div class='empl'>49Games                                    <div class='town'>Hamburg               </div></div><div class='jobtitle'>Gameplay Programmer   <div class='jobdesc'>Developing multiplatform sport games.</div></div> </div>
+        <div class='dline'><div class='date'>2003 - 2005</div><div class='empl'>Codeon                                     <div class='town'>Dortmund              </div></div><div class='jobtitle'>IT Developer          <div class='jobdesc'>Developing object oriented server applications and GUIs.</div></div> </div>
+        <div class='dline'><div class='date'>2002       </div><div class='empl'>                                           <div class='town'>Barcelona             </div></div><div class='jobtitle'>Freelancing Programmer<div class='jobdesc'></div></div> </div>
+        <div class='dline'><div class='date'>2000 - 2001</div><div class='empl'>Pixelpark                                  <div class='town'>Dortmund, London      </div></div><div class='jobtitle'>Technical Lead        <div class='jobdesc'>Leading a team of 10 developers in charge of the creation of the<br>CMS and the backend for a major customer's website.</div></div> </div>
+        <div class='dline'><div class='date'>1997 - 1999</div><div class='empl'>Object Factory                             <div class='town'>Dortmund              </div></div><div class='jobtitle'>IT Developer          <div class='jobdesc'>Developing object oriented server applications and<br>the GUI of an internal service-level management application.</div></div> </div>
+        <div class='dline'><div class='date'>1995 - 1998</div><div class='empl'>Professorial Chair for Computer Graphics   <div class='town'>University of Dortmund</div></div><div class='jobtitle'>Professor's assistant <div class='jobdesc'>GUI development for various research projects.<br>Software and webserver administration.</div></div> </div>
+        <div class='dline'><div class='date'>1993 - 1994</div><div class='empl'>Institute of Fine Arts and their Didactics <div class='town'>University of Dortmund</div></div><div class='jobtitle'>Professor's assistant <div class='jobdesc'>Computer-tutorial for art students.</div></div> </div>
+        <div class='dline'><div class='date'>1991 - 1995</div><div class='empl'>MB Data Research                           <div class='town'>Dortmund              </div></div><div class='jobtitle'>IT Developer          <div class='jobdesc'>Developing graphical user interfaces for<br>various in-house applications.</div></div> </div>
+        <div class='dline'><div class='date' style='font-size:21px;'>Summer 1991</div><div class='empl'>Ruhrkohle AG                               <div class='town'>Bottrop               </div></div><div class='jobtitle'>Internship            <div class='jobdesc'>Developing a data export tool in Fortran.</div></div> </div>
+        <h2>Private Projects</h2>
+        <div class='dline'><div class='date'>2011</div><a href="http://monsterkodi.net/misc/k"   ><div class='link'>k               </div></a><div class='desc'>graphical programming environment</div><div class='os'>iPad<br>unreleased     </div><div class='lang'>Objective C<br>Sparrow</div></div>
+        <div class='dline'><div class='date'>2011</div><a href="http://monsterkodi.net/klogger"  ><div class='link'>klogger         </div></a><div class='desc'>development tool, OSC logger     </div><div class='os'>Mac                    </div><div class='lang'>Objective C</div></div>
+        <div class='dline'><div class='date'>2010</div><a href="http://monsterkodi.net/misc/krap"><div class='link'>krap            </div></a><div class='desc'>educational game                 </div><div class='os'>iPad<br>unreleased     </div><div class='lang'>Objective C<br>Sparrow</div></div>
+        <div class='dline'><div class='date'>2008</div><a href="http://monsterkodi.net/kraut"    ><div class='link'>kraut           </div></a><div class='desc'>casual game                      </div><div class='os'>iPhone<br>iPad in 2010 </div><div class='lang'>Objective C<br>OpenGL</div></div>
+        <div class='dline'><div class='date'>2007</div><a href="http://krank.sourceforge.net"    ><div class='link'>krank           </div></a><div class='desc'>casual game                      </div><div class='os'>PC, Mac<br>iPad in 2010</div><div class='lang'>python<br>pygame</div></div>
+        <div class='dline'><div class='date'>2006</div><a href="http://krix.sourceforge.net"     ><div class='link'>krix            </div></a><div class='desc'>music organizer                  </div><div class='os'>Mac                    </div><div class='lang'>python<br>pyObjC</div></div>
+        <div class='dline'><div class='date'>2004</div><a href="http://kork.sourceforge.net"     ><div class='link'>kork            </div></a><div class='desc'>3D action game                   </div><div class='os'>PC, Mac<br>prototype   </div><div class='lang'>python<br>pyOgre, pyODE</div></div>
+        <div class='dline'><div class='date'>2004</div><a href="http://mp3ql.sourceforge.net"    ><div class='link'>mp3ql           </div></a><div class='desc'>mp3 organizer                    </div><div class='os'>PC                     </div><div class='lang'>python<br>pyQt</div></div>
+        <div class='dline'><div class='date'>2003</div><a href="http://kiki.sourceforge.net"     ><div class='link'>kiki the nanobot</div></a><div class='desc'>3D puzzle game                   </div><div class='os'>PC, Mac                </div><div class='lang'>C++, python<br>OpenGL</div></div>
+        <div class='dline'><div class='date'>2002</div><a href="http://kodisein.sourceforge.net" ><div class='link'>kodisein        </div></a><div class='desc'>VJ-tool, realtime 3D animation   </div><div class='os'>PC, Mac                </div><div class='lang'>C++<br>OpenGL</div></div>
+    </div>
+    </div>
+</center>
+</body>
+</html>

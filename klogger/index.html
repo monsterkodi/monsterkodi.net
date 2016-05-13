@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+  <head>
+	<title>klogger</title>
+		<link   type="text/css"      href="css/style.css"           rel="stylesheet" />
+		<link   type="text/css"      href="css/prettyPhoto.min.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+		<script type="text/javascript" src="js/jLog.min.js"></script>
+		<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+		<script type="text/javascript" src="js/jquery.timer.js"></script>
+		<script type="text/javascript" src="js/jquery.prettyPhoto.min.js"></script>
+		<script type="text/javascript" src="js/klogger.js"></script>
+
+  </head>
+	<body>
+		
+		<div class="main">
+
+			<div class="box"><center><div class="maintitle"><img src="img/logo.png" class="maintitle_icon" /><img src="img/title.png" class="maintitle_name" /></div></center>
+					<img class="mainshot" src="shots/klogger_main.png" />
+			</div>	
+
+			<div class="box">
+				
+					<center>
+						<div class="boxtitle feature_box_title"><p>About klogger</p></div>
+						<div class="feature_content_navi">
+							<ul>
+								<li style="margin-right:20px"><img src="img/icon/list.png" onclick="showFeature('FEATURE_0');"/></li>
+								<li style="margin-left:3px"><img src="img/icon/sun.png"   		onclick="showFeature('FEATURE_1');"/></li>
+								<li style="margin-left:3px"><img src="img/icon/share.png" 		onclick="showFeature('FEATURE_2');"/></li>
+								<li style="margin-left:3px"><img src="img/icon/wireless.png" 	onclick="showFeature('FEATURE_3');"/></li>
+								<li style="margin-left:3px"><img src="img/icon/cogs.png"			onclick="showFeature('FEATURE_4');"/></li>
+								<li style="margin-left:3px"><img src="img/icon/delete.png"		onclick="showFeature('FEATURE_5');"/></li>
+								<li style="margin-left:3px"><img src="img/icon/user.png"			onclick="showFeature('FEATURE_6');"/></li>
+							</ul>
+						</div>
+					</center>
+
+				<div class="feature_mask">
+										
+					<div class="feature_overview"  id="FEATURE_0_CONTENT">
+						<p style="margin-top:30px">
+							klogger is a development tool to display log messages from various sources.<br><br><br>
+						</p>
+						<p>
+								<table width="100%" border=0><tr>
+								<td align="center" valign="top">
+									<div class="feature" id="FEATURE_1">
+										<div class="feature_icon"><img src="img/icon/sun.png"/></div><div class="feature_abstract">
+										<h2>Colorfull</h2><p>automatically highlights common data structures and types...</p></div>
+									</div>
+									<div class="feature" id="FEATURE_2">
+										<div class="feature_icon"><img src="img/icon/share.png"/></div><div class="feature_abstract">
+										<h2>Structured</h2><p>displays messages in a hierarchical table...</p></div>
+									</div>
+								</td><td align="center" valign="top">
+									<div class="feature" id="FEATURE_3">
+										<div class="feature_icon"><img src="img/icon/wireless.png"/></div><div class="feature_abstract">
+										<h2>Networked</h2><p>transfers log messages via OSC...</p></div>
+									</div>
+									<div class="feature" id="FEATURE_4">
+										<div class="feature_icon"><img src="img/icon/cogs.png"/></div><div class="feature_abstract">
+										<h2>Configurable</h2><p>colors, keyboard shortcuts, column layouts, you name it...</p></div>
+									</div>
+								</td><td align="center" valign="top">
+									<div class="feature" id="FEATURE_5">
+										<div class="feature_icon"><img src="img/icon/delete.png"/></div><div class="feature_abstract">
+										<h2>Mac OS X only</h2><p>specifically tailored to be used with Xcode...</p></div>
+									</div>
+									<div class="feature" id="FEATURE_6">
+										<div class="feature_icon"><img src="img/icon/user.png"/></div><div class="feature_abstract">
+										<h2>Designed for me</h2><p>I made it for myself and it works for me. But it might be useful for you as well...</p></div>
+									</div>
+								</td>
+								</tr></table>
+							</p>
+						</div> <!-- overview -->
+												
+						<div class="feature_content" id="FEATURE_1_CONTENT"><div class="feature_content_body">
+								<p style="margin-top:15px; margin-bottom:10px">common data structures and types are automatically highlighted:</p>
+								<center>
+								<img class="feature_content_image" src="shots/colors_values.png" width="428" height="100"/>
+								</center>
+								<p style="margin-top:35px; margin-bottom:10px">you can colorize messages manually by using a simple markup format:</p>
+								<center>
+								<img class="feature_content_image" src="shots/colors_markup.png" width="428" height="100"/>
+								</center>
+							</div>
+						</div>
+						<div class="feature_content" id="FEATURE_2_CONTENT"><div class="feature_content_body">
+								<p style="margin-top:15px; margin-bottom:10px">log messages are displayed in a hierarchy:</p>
+								<center>
+								<img class="feature_content_image" src="shots/structure_address.png" width="375" height="130"/>
+								</center>
+								<p style="margin-top:35px; margin-bottom:10px">metadata is displayed in seperate columns:</p>
+								<center>
+								<img class="feature_content_image" src="shots/structure_columns.png" width="620" height="92"/>
+								</center>
+							</div>
+						</div>
+						<div class="feature_content" id="FEATURE_3_CONTENT"><div class="feature_content_body">
+								<center>
+									<img src="img/networked.png" width="527" height="350" style="margin-topasd:-10px"/>
+								</center>
+								<div style="display:block; position:absolute; top:200px; left:80px; width:150px; text-align:left;">
+									Simultaneously receive logs from multiple applications on different devices
+								</div>
+								<div style="display:block; position:absolute; top:200px; right:80px; width:180px; text-align:right;">
+									Zero Configuration:<br>uses Bonjour to automagically connect to clients in the local network
+								</div>
+							</div>
+						</div>
+						<div class="feature_content" id="FEATURE_4_CONTENT"><div class="feature_content_body">
+								<p style="margin-top:15px; margin-bottom:10px">configurable color theme:</p>
+								<center><img class="feature_content_image" src="img/themes.png" width="660" height="159"/></center>
+							</div></div>
+						<div class="feature_content" id="FEATURE_5_CONTENT"><div class="feature_content_body">
+								<p style="margin-top:15px; margin-bottom:10px">open the source file in Xcode where the<br>currently selected message was issued:</p>
+								<center>
+								<img class="feature_content_image" src="shots/jumptofile_menu.png" width="431" height="73"/>
+								</center>
+								<p style="margin-top:35px; margin-bottom:10px">instead of using a keyboard shortcut you can<br>do the same by clicking on the file name:</p>
+								<center>
+								<img class="feature_content_image" src="shots/jumptofile_mouse.png" width="431" height="73"/>
+								</center>
+							</div></div>
+						<div class="feature_content" id="FEATURE_6_CONTENT"><div class="feature_content_body">
+								<p style="margin-top:25px">
+									I made klogger mainly to debug applications on the iPad.<br>
+									But there might be other use cases for it:
+								</p>
+
+									<h2>Networked applications</h2><p>
+										I can imagine that it would be really usefull if you are developing a multiplayer game<br>
+										or any other application that communicates over the network.</p>
+								
+									<h2>OSC applications</h2><p>
+										If you are writing an application that communicates over OSC,<br>
+										you might use klogger to debug or just monitor the OSC messages that are sent.</p>
+								
+									<h2 style="margin-top:45px">Open Source</h2><p>
+										You need a special feature or don't like something?<br>It's open source, so go ahead and change it &#x263A;</p>
+							</div></div>
+												
+					</div> <!-- mask end -->
+					
+					<div class="feature_back_area" onMouseOver="highlightBackArrow();" onMouseOut="unhighlightBackArrow();" onMouseDown="dehighlightBackArrow();" onMouseUp="highlightBackArrow();" onClick="showPrevFeature();" ></div>
+					<div class="feature_next_area" onMouseOver="highlightNextArrow();" onMouseOut="unhighlightNextArrow();" onMouseDown="dehighlightNextArrow();" onMouseUp="highlightNextArrow();" onClick="showNextFeature();" ></div>
+
+					<div class="feature_back"><div class="feature_back_arrow"></div></div>
+					<div class="feature_next"><div class="feature_next_arrow"></div></div>
+		
+			</div> <!-- box	end -->
+						
+			<div class="box"><center><div class="boxtitle">Screenshots</div></center>
+				<table width="100%" style="margin-bottom:20px"><tr><td>
+						<div class="imgbox"><a href="shots/website.jpg"      rel="imageview[pp_gal]" title="image 01">
+							<img class="screenshot" src="shots/klogger01.png"/></a></div></td><td>												
+						<div class="imgbox"><a href="shots/klogger02big.png" rel="imageview[pp_gal]" title="image 02">
+							<img class="screenshot" src="shots/klogger02.png"/></a></div></td><td>
+						<div class="imgbox"><a href="shots/klogger01big.png" rel="imageview[pp_gal]" title="image 03">
+							<img class="screenshot" src="shots/klogger01.png"/></a></div></td></tr>
+				</table>
+			</div>	
+
+				<table id="topics" width="100%" cellpadding="0" cellspacing="0" border=0><tr><td>
+					<a href="#documentation" onclick="showTopic(0);"><div class="topic_header" id="topic_left"  >Documentation</div></a></td><td>
+		      <a href="#download"      onclick="showTopic(1);"><div class="topic_header" id="topic_center">Download     </div></a></td><td>
+		      <a href="#credits"       onclick="showTopic(2);"><div class="topic_header" id="topic_right" >Credits      </div></a></td></tr>
+					<tr><td colspan=3>
+						<div class="topic_body">
+							<div class="topic_container">
+								<div class="topic_content" id="topic_documentation">
+								</div>
+								<div class="topic_content" id="topic_download">
+										<p style="margin: 15px 0px 20px 0px">the sources are available on</p>
+										<a href="http://gitorious.org/k" target="_blank" id="gitorious"><img src="img/blank.png" /></a>
+								</div>
+								<div class="topic_content" id="topic_credits">
+									<center>
+									<table width="100%" border="0"><tr>
+									<td align="left" valign="top" width="33%">
+									<ul style="margin-left:53px">
+										general<br><br>
+										<li><a href="http://gitorious.org/">gitorious</a></li>
+										<li><a href="http://www.git-tower.com/">tower</a></li>
+										<li><a href="http://macromates.com/">textmate</a></li>
+										<li><a href="http://www.pixelmator.com/">pixelmator</a></li>
+										<li><a href="http://www.dmi.dk/dmi/index/danmark/radar.htm">ugly weather</a></li>
+									</ul>
+									</td><td align="left" valign="top" width="33%">
+									<ul style="margin-left:85px">
+										program<br><br>
+										<li><a href="http://code.google.com/p/vvopensource/">vvopensource</a></li>
+										<li><a href="http://stig.github.com/json-framework/">JSON Framework</a></li>
+										<li><a href="http://regexkit.sourceforge.net/RegexKitLite/">RegexKit<i>Lite</i></a></li>
+									</ul>
+									</td><td align="left" valign="top"  width="33%">
+									<ul style="margin-left:80px">
+										website<br><br>
+										<li><a href="http://jquery.com">jQuery</a>
+											&#x2022; <a href="http://gsgd.co.uk/sandbox/jquery/easing/">easing</a>
+											&#x2022; <a href="http://www.evanbyrne.com/article/jquery-timer-plugin">timer</a>
+										</li>
+										<li><a href="http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/">prettyPhoto</a></li>
+										<li><a href="http://www.patorjk.com/software/taag/">Text ASCII Art Generator</a></li>
+										<li>icons: &#x2022; <a href="http://gentleface.com/free_icon_set.html">gentleface</a> &#x2022; <a href="http://www.artua.com/">artua</a></li>
+									</ul>
+									</td></tr>
+									</table>
+									</center>
+								</div>
+							</div> <!-- topic_container end -->
+						</div> <!-- topic_body end -->
+					</td></tr>
+				</table>			
+		</div>
+				
+	</body>
+</html>

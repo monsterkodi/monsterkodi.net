@@ -1,0 +1,429 @@
+>>------------------------------------------------------------ minimal documentation
+
+ messages      : [base] name
+ 
+                 if base is specified, all fields from the base message are inherited
+                 multiple inheritance ist possible
+
+ fields        : (+|-|*|$|>) type name [= default] [# id] [:FLAG1 :FLAG2 ...] [(%|==|!=|>>) arg1 arg2 ...] [-- description]
+ 
+       symbols : 
+             + : required
+             - : optional
+             * : repeated
+             $ : enum declaration and (optional) field. the enum values are hashes of the name
+             # : enum declaration and (optional) field. the enum values are numbered consecutively (1,2,3,...)
+             > : optional ref
+            
+         flags : CREATE   - user may create new object in this field
+                 HIDDEN   - field doesn't show in objects tree
+                 DEEP     - objects in repeated field will be copied if parent message is copied
+                 DUPES    - the repeated field may contain more duplicate refs
+                 SINGLE   - only one object of each message type
+                 NOREF    -
+
+         types : string int uint float bool bytes [EnumType] [MessageType]
+
+         notes : the empty line after the last field of a message is mandatory!
+                 comment lines start with --
+                 field descriptions are displayed as tooltips in the editor 
+
+<<------------------------------------------------------------ data structures 
+
+Position
+- float x                               # 1
+- float y                               # 2
+
+Rotation
+- float yaw                             # 1
+- float pitch                           # 2
+- float roll                            # 3
+
+Scale
+- float x                         = 1.0 # 1
+- float y                         = 1.0 # 2
+- float z                         = 1.0 # 3
+
+Vector
+- float x                               # 1
+- float y                               # 2
+- float z                               # 3
+
+Matrix              
+- vector right                          # 1
+- vector up                             # 2
+- vector dir                            # 3
+- vector pos                            # 4
+
+-------------------------------------------------------------- object base
+
+Object
+- string        _id                     # 1 -- database id
+- int           _version                # 2 -- database version
++ uint          uid                     # 3 -- unique id
+- string        name                    # 4
+- string        description             # 5
+
+Object          Component
+
+------------------------------------------------------------- ECS
+------------------------------------------------------------- components
+
+Component       Shape
+                -----
+- string        shape
+
+Component       Transform
+                ---------
+- scale         scale
+- vector        position
+- rotation      rotation
+
+Component       Movement
+                --------
+- vector        constantLinearVelocity
+- vector        constantAngularVelocity
+
+Component       Steering
+                --------
+- vector        maxLinearVelocity
+- vector        maxAngularVelocity
+- vector        maxLinearAcceleration
+- vector        maxAngularAcceleration
+
+Component       Weapon
+                ------
+- float			fireDelay
+- float			scatterAngle
+- float         forwardSpawningOffset
+- float         weaponRange
+- Entity        projectile
+- float         energyPerProjectile
+- float         projectileSpeed
+- int			projectilesPerSalvo
+- float			projectileSalvoDelay
+- float			projectileSalvoOffset
+- int			innerRingProjectilesPerSalvo
+
+Component       Shooting
+                ------
+- float         damage
+- float			fireDelay
+- float			scatterAngle
+- float         forwardSpawningOffset
+- float         projectileRange
+> Entity	    projectile
+- float         energyPerProjectile
+- float         projectileSpeed
+- int			projectilesPerSalvo
+- float			projectileSalvoDelay
+- float			projectileSalvoOffset
+- int			innerRingProjectilesPerSalvo
+
+Component       Arming
+                ------
+- string		weaponMountResource
+* int			weaponMountToSlotMapping
+* Entity		weaponTemplates
+
+Component       Banking
+                ------
+- float         maxAngleRad     = 1.0
+- float         speed           = 1.0
+
+Component       Energy
+                ------
+- float         maxEnergy
+- float         regenPerSecond
+
+Component       Hull
+                ----
+- float         maxHull
+
+Component       Shield
+                ------
+- float         maxShield
+- float         regenPerSecond
+- float         regenDelay
+
+Component       Collision
+                ---------
+# Type          type                    % Mesh ConvexHull OrientedBox Sphere Cylinder Capsule AlignedBox
+- vector        halfDimensions
+$ Group         group                   % Projectile Ship ProjectileAndShip Asteroid
+- int           mask
+
+Component       Lifetime
+                --------
+- float         remaining
+
+Component       DamageOnCollision
+
+Component       Damage
+                ------
+- float         damage
+
+Component       DieOnCollision 
+
+Component       MoveOnCollision
+
+Component       DamageReceiver 
+ 
+Component       ArmingAgent
+
+Component       SteeringAgent	
+
+Component       AiAgent
+
+Component       AiBrain
+
+Component       AiGroup 
+
+Component       AiGroupMember
+
+Component       Destructable     
+
+Component       Destroyable 
+
+Component       SpawnPoint                   
+
+Component       CameraSettings
+                --------------
+- float         zNear                           = 16.0
+- float         zFar                            = 24.0
+- float         y                               = 5.0
+ 
+Component       CameraTransform
+                ---------------
+- vector        position
+
+Component       CameraThirdPerson
+                -----------------
+- float         dampingStrength                 = 0.026
+- int           rotationPredictionSteps         = 18
+- float         lookAtDistance                  = 9.0
+- float         curveFlightDistanceCorrection   = 6.0
+- float         fov                             = 60.0
+
+Component       Light
+                -----
+$ Type          lightType                    % Positional Directional 
+- vector        ambientColor
+- vector        diffuseColor
+- vector        specularColor
+- float         constAttenuation
+- float         linearAttenuation
+- float         quadrAttenuation 
+- float         spotExponent
+- float         spotCutoff
+- float         shininess
+
+Component       Test
+                ----
+- matrix        matr
+- vector        vector
+- pos           position
+- rotation      rotation
+- scale         scale
+- bool          bool
+- string        string  
+- text          text
+- int           int
+- uint          uint
+- float         float
+* int           ints
+* uint          uints
+* bool          bools
+* float         floats
+* string        strings
+
+------------------------------------------------------------- entities
+
+> Asteroid      Transform Collision Movement Shape DamageReceiver
+> AsteroidField Transform
+> Camera        CameraThirdPerson
+> Moon          Transform Shape
+> Planet        Transform Shape
+> Projectile 
+> Ship          Transform Shape
+> Station       Transform Shape
+> Sun           Transform Shape
+> Weapon        Transform
+> Zone          Transform
+
+Object          Entity         
+                ------
+$ Type          entityType
+* Component     component               :ONETYPE :NOREF
+
+------------------------------------------------------------- missions
+
+Object          ObjectList
+                ----------
+- int           minComplete
+* Entity        entity
+
+Object			MyTimer
+				-----
+- int           count
+
+
+Object			MyCounter
+				-------
+- int			value
+- int			end
+
+Object          ScriptItem	
+
+Object			Timer
+
+Object			Counter
+
+Object			Jumpgate
+
+ScriptItem      Task
+				----
+- string        completionText
+
+ScriptItem      Action
+
+ScriptItem      Condition
+
+ScriptItem      Command
+				-------
+- Object		subject
+$ Type			predicate				% START STOP
+- Object		object
+
+ScriptItem      Set
+                -----
+- Object        object
+- string        key
+- int           value
+
+Task            ReachTask
+				---------
+- int			radius
+- ObjectList	targets
+
+Task            CompleteTask
+                ------------
+- int           minComplete
+- ObjectList    objects
+$ Type          taskType                % KILL FIND
+
+Object          Mission
+                -------
+* Object        object                  != Entity
+* ScriptItem    scriptItem              != Task Action
+- string        completionText
+
+------------------------------------------------------------- universe hierarchy
+
+Object          Location
+                --------
+$ Type          locationType            % Planet Moon Ship
+- string        skyboxMaterial
+- vector        position
+- float         size                    = 100100
+* Entity        object                  !> Projectile Weapon
+
+Object          Region
+                ------
+$ Type          regionType              % SolarSystem Astroids Anomaly
+* Location      location
+
+Object          Sector
+                ------
+$ Type          sectorType              % Galaxy Nebula
+* Region        region
+
+------------------------------------------------------------- debug
+
+Object          DebugSection
+
+DebugSection    DebugCollision
+                --------------
+- bool          DrawWireframe
+- bool          DrawAABB
+- bool          DrawFeaturesText
+- bool          DrawContactPoints
+- bool          NoDeactivation
+- bool          NoHelpText
+- bool          DrawText
+- bool          ProfileTimings
+- bool          EnableSatComparison
+- bool          DisableBulletLCP
+- bool          EnableCCD
+- bool          DrawConstraints
+- bool          DrawConstraintLimits
+- bool          FastWireframe
+- bool          DrawNormals
+
+DebugSection    DebugHUD
+                --------
+- bool          disableHUD
+
+Object          Debug
+                -----
+* DebugSection  section                 :ONETYPE != DebugSection
+
+------------------------------------------------------------- config
+
+Object          ConfigHUD
+                ---------
+- bool          moveSticks              = true
+- bool          hideSticks              = true
+- float         buttonScaleFactor       = 1.0
+- float         thrustThreshold         = 0.5
+- pos           buttonPause
+- pos           buttonBoost
+- pos           buttonCloak
+- pos           buttonCommands
+- pos           buttonDevices
+- pos           buttonTarget
+- pos           buttonSecondaryFire
+
+Object          ConfigGame
+                ----------
+- Location      startLocation
+- Mission       startMission
+- Entity        playerShip
+- Entity        camera
+
+Object          ConfigInput
+                -----------
+- bool          invertYaw               = false
+- bool          invertPitch             = false
+
+Object          ConfigVideo
+                -----------
+$ Type          textureDetail           % High Medium Low
+
+Object          ConfigSound
+                -----------
+- float         masterVolume            = 1.0
+- float         fxVolume                = 1.0
+- float         musicVolume             = 1.0
+
+Object          Config
+                ------
+- ConfigHUD     hud
+- ConfigGame    game
+- ConfigInput   input
+- ConfigVideo   video
+- ConfigSound   sound
+
+------------------------------------------------------------- world
+
+Object          World
+                -----
+* Sector        sector
+* Mission       mission
+* Entity        weapon      >> Weapon
+* Entity        projectile  >> Projectile
+* Entity        ship        >> Ship
+* Entity        camera      >> Camera
+* Config        config
+* Debug         debug
+

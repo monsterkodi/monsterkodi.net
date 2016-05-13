@@ -1,0 +1,448 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content=
+  "text/html; charset=us-ascii" />
+
+  <title>kodisampler</title>
+<style type="text/css">
+ <!--    
+	body 	  { background-color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; padding-left:10px; padding-top:10px; margin-top:0px; }
+	a 	  	  { color: #111111; text-decoration:none; }  
+	a:hover   { color: #ffff00; text-decoration:none; font-size: 16px; }
+	img       { border-color: #111111 }  
+	img:hover { border-color: #ffff00 }
+	#album    { float:left; position:relative; padding-top: 10px; width:280px; height:280px; }
+	#playerf  { float:left; position:relative; padding-top: 10px; padding-right: 20px; width:540px; height:280px; background-color: #000000;}      
+ -->     
+</style>
+<script type="text/javascript" src="swfobject.js">
+</script>
+</head>
+
+<body>
+  <center>
+    <table border="0" width="90%">
+      <tr>
+        <td align="center">
+          <div id="playerf">
+            <div id="player"></div>
+          </div><script type="text/javascript">
+			var so = new SWFObject('./mediaplayer.swf','player','520','240','8');
+			so.addParam('allowscriptaccess','always');
+			so.addParam('allowfullscreen','true');
+			so.addParam('overstretch', 'fit');
+			so.addVariable('shuffle', 'false');
+			so.addVariable('showdownload', 'false');
+			so.addVariable('repeat', 'list');
+			so.addVariable('width','520');
+			so.addVariable('height','240');
+			so.addVariable('displaywidth', '240');
+			so.addVariable('displayheight', '220');
+			so.addVariable('bufferlength', '10');
+			so.addVariable('backcolor', '0x000000');
+			so.addVariable('frontcolor', '0xffffff');
+			so.addVariable('lightcolor', '0xffff00');
+			so.addVariable('screencolor', '0x000000');
+			so.addVariable('file','./sampler.xml');
+			so.write('player');
+		  </script>
+          
+            <!-- album template
+            <div id="album">
+                <a href="MP3_URL">  
+                <img src="kodisamplerNN.jpg" title=
+                "ARTIST - SONGTITLE" height="240" width="240" border="1"></a><a href=
+                "ALBUM_URL" title=
+                "ARTIST - ALBUMTITLE">[<]</a>
+            </div>
+            -->
+
+          <div id="album">
+              <a href="http://blog.datasapiens.net/dsaudio/Mikael%20Simpson%20-%20Medicin.mp3">  
+              <img src="kodisampler40.jpg" title=
+              "mikael simpson - medicin" height="240" width="240" border="1"></a><a href=
+              "http://blog.datasapiens.net/2009/02/mikael-simpson-slaar-skaar/" title=
+              "mikael simpson - slaar skaar">[<]</a>
+          </div>
+            
+          <div id="album">
+              <a href="http://www.archive.org/download/CHW004/CHW004_03_Ferenc_Vaspoeri_-_Memento_-_ChiWare.mp3">  
+              <img src="kodisampler39.jpg" title=
+              "verenc vaspoeri - memento" height="240" width="240" border="1"></a><a href=
+              "http://www.chi-recordings.com/angol/chiware.htm#CHW004" title=
+              "verenc vaspoeri - elegance">[<]</a>
+          </div>
+            
+          <div id="album">
+                <a href="http://grandmasterrobo.sonicsquirrel.net/insectorama/16_Liquid%20Level-Michael%20Myer%27s%20(Halloween)%20theme.mp3">
+                <img src="kodisampler38.jpg" title=
+                "liquid level - michael myer´s halloween theme" height="240" width="240" border="1"></a><a href=
+                "http://www.insectorama.de/index.php?m=3" title=
+                "various - electronic washroom vol.3">[<]</a>
+          </div>
+            
+          <div id="album">
+                <a href="http://www.archive.org/download/DWK017/Groove_Inc_-_04_-_Surrender_64kb.mp3">
+                <img src="kodisampler37.jpg" title=
+                "groove inc. - surrender" height="240" width="240" border="1"></a><a href=
+                "http://dustedwax.org/dwk017.html" title=
+                "groove inc. - under hypnosis">[<]</a>
+          </div>
+            
+          <div id="album">
+              <a href="http://freedownloads.last.fm/download/75568129/No%2BQuarto%2BDos%2BPais%2B%2528Interl%25C3%25BAdio%2529%2B%252B%2BTormenta.mp3">  
+              <img src="kodisampler36.jpg" title=
+              "psuedonimo - no quarto dos pais (interludio) + tormenta" height="240" width="240" border="1"></a><a href=
+              "http://www.broque.de/releases/043pseudonimo/043pseudonimoe.htm" title=
+              "psuedónimo - terra firme e.p.">[<]</a>
+          </div>
+            
+          <div id="album">
+            <a href="http://www.archive.org/download/ego009/ego009_03-stella_we_are_sorry.mp3">  
+            <img src="kodisampler35.jpg" title=
+            "engine7 - stella, we're sorry (snow peas)" height="240" width="240" border="1"></a><a href=
+            "http://www.legoego.de/l_index.php?locator=releases&release_id=13" title=
+            "engine7 - hope street">[<]</a>
+          </div>
+            
+          <div id="album">
+						<a href="http://www.archive.org/download/TriPostal/trip1/14_Code314AndMathiasB_The_Wine_Of_Youth.mp3">
+            <img src="kodisampler34.jpg" title=
+            "code 314 &amp; mathias b - the wine of youth" height=
+            "240" width="240" border="1" /></a><a href=
+            "http://www.cartepostalerecords.be/tripostal/main.htm"
+            title="various - portr&auml;t">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://www.archive.org/download/konfort016/konfort016-04.mp3">
+            <img src="kodisampler33.jpg" title=
+            "the incognito traveller - chaleur" height="240" width=
+            "240" border="1" /></a><a href=
+            "http://www.discoskonfort.com/netlabel/the-incognito-traveller-ep/"
+            title=
+            "the incognito traveller - the incognito traveller ep">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://web0.pv220.ncsrv.de/music/brq36_nils_hoffmann-kurz_und_klein_ep/brq36_nils_hoffmann-kurz_und_klein_ep-01_sweet_man_like_me.mp3">
+            <img src="kodisampler32.jpg" title=
+            "nils hoffmann - sweet man like me" height="240" width=
+            "240" border="1" /></a><a href=
+            "http://www.broque.de/releases/036nilshoffmann/036nilshoffmann.htm"
+            title="nils hoffmann - kurz und klein e.p.">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://s188809440.onlinehome.fr/freshpoulp/FPR014/5-TheVoidTriumph.mp3">
+            <img src="kodisampler31.jpg" title=
+            "normaa - the void triumph" height="240" width="240"
+            border="1" /></a><a href=
+            "http://www.fresh-poulp.net/releases/FPR014.htm" title=
+            "normaa - fake media">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://www.archive.org/download/DBR004/09__Mr._Moods__The_Endless_Story.mp3">
+            <img src="kodisampler30.jpg" title=
+            "mr. moods - the endless story" height="240" width=
+            "240" border="1" /></a><a href=
+            "http://hph.tpu.fi/%7Ea3johman/dirtybirdrexx/beta/release.php?id=4"
+            title=
+            "mr. moods - in love we trust... and we hate">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://www.archive.org/download/electrosound.ru_es19/es19__03__Siba__Daria.mp3">
+            <img src="kodisampler29.jpg" title="siba - daria"
+            height="240" width="240" border="1" /></a><a href=
+            "http://www.netaudio.ru/electrosound/releases/es19/"
+            title="siba - daria">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://www.jahtari.org/music/sounds/Net7inch/JTR_NET12/JTRNET12_A_Illyah_Ltd_Candy_-_Fight_The_Formation.mp3">
+            <img src="kodisampler28.jpg" title=
+            "illyah &amp; ltd. candy - fight the formation" height=
+            "240" width="240" border="1" /></a><a href=
+            "http://www.jahtari.org/music/JTR%20NET12.htm" title=
+            "illyah &amp; ltd. candy - fight the formation / poor girl">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://one.dot9.ca/2/releases/032/one028_02-emil_klotzsch_-_geteiltes_sein.mp3">
+            <img src="kodisampler27.jpg" title=
+            "emil klotzsch - geteiltes sein" height="240" width=
+            "240" border="1" /></a><a href=
+            "http://one.dot9.ca/2/releases.php?id=032" title=
+            "emil klotzsch - feinquist">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://www.archive.org/download/mamiremixed/sern14_mami-05-Androides.mp3">
+            <img src="kodisampler26.jpg" title="nami - androides"
+            height="240" width="240" border="1" /></a><a href=
+            "http://www.seriesmedia.org/eng/content/musica_web/sern/sern14.html"
+            title="various - remixed">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://www.archive.org/download/tube012/tube012-03-aitanna77_-_licking_ice_cream_cones.mp3">
+            <img src="kodisampler25.jpg" title=
+            "ait&auml;nna77 - licking ice cream cones" height="240"
+            width="240" border="1" /></a><a href=
+            "http://www.monocromatica.com/netlabel/releases/tube012.htm"
+            title=
+            "ait&auml;nna77 - spring is coming soon">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://www.archive.org/download/arh007_SelfMadeMusic_-_Stop_yelling/arh007_01_-_What_I_used_to_like.mp3">
+            <img src="kodisampler24.jpg" title=
+            "selfmademusic - what i used to like" height="240"
+            width="240" border="1" /></a><a href=
+            "http://arhiva7.ro/netlabel/releases/arh007.htm" title=
+            "selfmademusic - stop yelling">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "ftp://ftp.scene.org/pub/music/groups/thinner/autoplate/%5Bapl031%5D-02-lou_teti_-_stroll.mp3">
+            <img src="kodisampler23.jpg" title="lou teti - stroll"
+            height="240" width="240" border="1" /></a><a href=
+            "http://www.thinner.cc/releases.php?r=apl031" title=
+            "lou teti - night pieces">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://www.archive.org/download/lokw001/07_Moosefrog_-_Dreaming_of_Wings.mp3">
+            <img src="kodisampler22.jpg" title=
+            "moosefrog - dreaming of wings" height="240" width=
+            "240" border="1" /></a><a href=
+            "http://www.archive.org/details/lokw001" title=
+            "moosefrog - come ep">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://www.archive.org/download/nsh096/nsh096-02-bject-come_on_come_on.mp3">
+            <img src="kodisampler21.jpg" title=
+            "bject - come on come on" height="240" width="240"
+            border="1" /></a><a href=
+            "http://www.notype.com/nishi/releases/96/index.html"
+            title="bject - thruth wounds">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://www.interdisco.net/mp3/id14/id14_04_trondheim-das_theater_und_die_akteure.mp3">
+            <img src="kodisampler20.jpg" title=
+            "trondheim - der erste widersacher und sein untergang"
+            height="240" width="240" border="1" /></a><a href=
+            "http://www.interdisco.net/indexde.php?release=id14"
+            title=
+            "trondheim - das theater und die akteure">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "ftp://ftp.scene.org/pub/music/groups/camomille/cam94-evangelion-03-evangelion_tangkai.mp3">
+            <img src="kodisampler19.jpg" title=
+            "tang kai - evangelion" height="240" width="240"
+            border="1" /></a><a href=
+            "http://camomille.genshimedia.com/094.htm" title=
+            "tang kai - evangelion">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://www.miga-label.org/upload/miga01/7.sr.aye_jerez.mp3">
+            <img src="kodisampler18.jpg" title="sr. aye - jerez"
+            height="240" width="240" border="1" /></a><a href=
+            "http://www.miga-label.org/eng/miga01.htm" title=
+            "sr. aye - ceros y unos">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://www.archive.org/download/arh005_Unicode_-_Protojazz/arh005_01_-_Okota.mp3">
+            <img src="kodisampler17.jpg" title="unicode - okota"
+            height="240" width="240" border="1" /></a><a href=
+            "http://arhiva7.ro/netlabel/releases/arh005.htm" title=
+            "unicode - protojazz">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://www.archive.org/download/sss032/sss032-02-rich-vom-dorf_dryed-tears.mp3">
+            <img src="kodisampler16.jpg" title=
+            "rich vom dorf - dryed tears" height="240" width="240"
+            border="1" /></a><a href=
+            "http://www.sumodehouse.com/sss/v2.php?r=32#n32" title=
+            "rich vom dorf - little big things 2">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://www.archive.org/download/hc161/hc161_07_i_love_men_by_mabafu.mp3">
+            <img src="kodisampler15.jpg" title=
+            "mabafu - i love men" height="240" width="240" border=
+            "1" /></a><a href=
+            "http://www.hippocamp.net/?releases/hc161.htm" title=
+            "mabafu - sonido del callao">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "ftp://ftp.scene.org/pub/music/groups/ideology/id012/id012_01_-_monomatik-bookends.mp3">
+            <img src="kodisampler14.jpg" title=
+            "monomatik - bookends" height="240" width="240" border=
+            "1" /></a><a href=
+            "http://www.ideology.de/archives/audio000086.php"
+            title="monomatik - sefton park">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://www.archive.org/download/laridae016/laridae016-07-mombus_-_bad_weather.mp3">
+            <img src="kodisampler13.jpg" title=
+            "mombus - bad weather" height="240" width="240" border=
+            "1" /></a><a href=
+            "http://www.laridae.at/releases.php?id=19&amp;start=0"
+            title="mombus - soap bubbles">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://www.archive.org/download/poli_050/leni.mp3"><img src="kodisampler12.jpg"
+            title="dorntec - leni" height="240" width="240" border=
+            "1" /></a><a href=
+            "http://politicide.net/cms-light/?p=22" title=
+            "various - politicide academy">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://www.archive.org/download/arh009_MJC_-_Blue_segment/arh009_01_-_Crep-Uscul-Atorium.mp3">
+            <img src="kodisampler11.jpg" title=
+            "mjc - crep-uscul-atorium" height="240" width="240"
+            border="1" /></a><a href=
+            "http://arhiva7.ro/netlabel/releases/arh009.htm" title=
+            "mjc - the blue segment">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://www.archive.org/download/moulin005/DIRGE_-_Fountain_EP_-_03_-_Phone.mp3">
+            <img src="kodisampler10.jpg" title="dirge - phone"
+            height="240" width="240" border="1" /></a><a href=
+            "http://www.autresdirections.net/inmusic/article.php3?id_article=25"
+            title="dirge - fountain ep">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://www.archive.org/download/moulin002/DUDLEY_-_Seasonal_LP_-_02_-_Fall_Song.mp3">
+            <img src="kodisampler09.jpg" title="dudley - fall song"
+            height="240" width="240" border="1" /></a><a href=
+            "http://www.autresdirections.net/inmusic/article.php3?id_article=6"
+            title="dudley - seasonal ep">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://www.archive.org/download/txtn009/txtn009-01-b-minikool.mp3">
+            <img src="kodisampler08.jpg" title="b. - minikool"
+            height="240" width="240" border="1" /></a><a href=
+            "http://www.textone.org/index.php?fuseaction=releases.show_release&amp;rel_id=txtn009"
+            title=
+            "various - designated drivers compilation">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "ftp://ftp.scene.org/pub/music/groups/thinner/%5Bthn075%5D-05-christian_bloch_-_the_struggle.mp3">
+            <img src="kodisampler07.jpg" title=
+            "christian bloch - the struggle" height="240" width=
+            "240" border="1" /></a><a href=
+            "http://thinner.cc/releases.php?r=thn075" title=
+            "christian bloch - new age">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "ftp://ftp.scene.org/pub/music/groups/thinner/%5Bthn068%5D-02-alice_mackay_&amp;_benfay_-_lighthouse.mp3">
+            <img src="kodisampler06.jpg" title=
+            "alice mackay &amp; benfay - lighthouse" height="240"
+            width="240" border="1" /></a><a href=
+            "http://www.thinner.cc/releases.php?r=thn068" title=
+            "alice mackay &amp; benfay - lighthouse ep">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://www.archive.org/download/ronincollective024/RC024-HalftoneBin-a02-Tape_fah.mp3">
+            <img src="kodisampler05.jpg" title="fah - tape" height=
+            "240" width="240" border="1" /></a><a href=
+            "http://www.archive.org/details/ronincollective024"
+            title="fah - halftone bin">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://www.archive.org/download/moulin014/3_untitled_2.mp3">
+            <img src="kodisampler04.jpg" title=
+            "melodium - untitled 2" height="240" width="240"
+            border="1" /></a><a href=
+            "http://www.autresdirections.net/inmusic/article.php3?id_article=86"
+            title="melodium - hum hum &amp; bla bla ep">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://www.archive.org/download/drift002/03_-_DoF_-_March.mp3">
+            <img src="kodisampler03.jpg" title="dof - march"
+            height="240" width="240" border="1" /></a><a href=
+            "http://www.archive.org/details/drift002" title=
+            "dof - a year in waiting">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "ftp://ftp.scene.org/pub/music/groups/thinner/autoplate/%5Bapl026%5D-01-arrial_-_mar,_revisitar.mp3">
+            <img src="kodisampler02.jpg" title=
+            "arrial - mar, revisitar" height="240" width="240"
+            border="1" /></a><a href=
+            "http://www.thinner.cc/releases.php?r=apl026" title=
+            "arrial - this is my beauty, show me yours">[&lt;]</a>
+          </div>
+
+          <div id="album">
+            <a href=
+            "http://www.archive.org/download/laridae022/laridae022-05-dima_vikhornov_-_narodnaya.mp3">
+            <img src="kodisampler01.jpg" title=
+            "dima vikhornov - narodnaya" height="240" width="240"
+            border="1" /></a><a href=
+            "http://www.laridae.at/releases.php?id=25" title=
+            "various - past perfect">[&lt;]</a>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </center>
+</body>
+</html>
